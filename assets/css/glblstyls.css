@@ -1398,18 +1398,15 @@ ul.prgrs-ulsc li::after {
     right: 30px;
 }
 
-.fnc-bx-two i.uil.uil-arrow-up-right {
+.fnc-bx-two i {
     position: absolute;
     top: 30px;
     right: 30px;
-    background: #9B252C;
-    color: #000;
-    width: 35px;
-    height: 45px;
     text-align: center;
     line-height: 45px;
     border-radius: 100px;
     font-size: 19px;
+    background-color: white !important;
 }
 
 .fnc-bx-two .dsc-sc h3 {
