@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
     --color-font: #000;
-    --color-primary: #18355f;
+    --color-primary: #73767B;
     --color-secondary: #9B252C;
     --color-link: #9B252C;
     --color-link-hover: #18355f;
@@ -328,7 +328,7 @@ h2.sb-ttls {
     font-size: 38px;
     line-height: 40px;
     font-weight: 400;
-    color: #18355f;
+    color: #9B252C;
     position: relative;
 }
 
@@ -344,7 +344,7 @@ h2.sb-ttls {
     font-weight: 600;
     padding-top: 11px;
     position: relative;
-    color: #18355f;
+    color: #9B252C;
 }
 
 .ab-dtlsc .counter-wrapper p::before {
@@ -361,7 +361,7 @@ a.prf-btn-s {
     text-transform: uppercase;
     border-radius: 100px;
     padding: 8px 25px;
-    color: #18355f;
+    color: #9B252C;
     font-size: 14px;
     letter-spacing: 1px;
 }
@@ -417,7 +417,7 @@ h4.tp-ttls span::before {
 
 .fncy-bxs-ctg .ttlsc-h3,
 .fncy-bxs-ctg h3 {
-    background: #18355f;
+    background: #9B252C;
     color: #fff;
     margin: 0;
     padding: 17px;
@@ -451,7 +451,7 @@ h4.tp-ttls span::before {
 
 .btn-styl2 i {
     margin-left: 5px;
-    color: #18355f;
+    color: #fff;
     font-size: 15px;
     position: absolute;
     right: 15px;
@@ -650,7 +650,7 @@ footer.ftrs-scs ul.list-unstyled li a {
 footer.ftrs-scs ul.list-unstyled li a::before {
     width: 6px;
     height: 6px;
-    background: #9B252C;
+    background: var(--color-primary);
     position: absolute;
     content: "";
     left: 0;
@@ -659,7 +659,7 @@ footer.ftrs-scs ul.list-unstyled li a::before {
 }
 
 footer.ftrs-scs ul.list-unstyled li a:hover {
-    color: #9B252C;
+    color:  var(--color-primary);
 }
 
 .ftrs-scs hr.mt-7.mb-7 {
@@ -695,7 +695,7 @@ a.dwn-bl:hover {
 }
 
 a.dwn-bl:hover i {
-    color: #5ba646 !important;
+    color: #9B252C !important;
 }
 
 footer.ftrs-scs nav.nav.social a {
@@ -709,11 +709,11 @@ footer.ftrs-scs nav.nav.social a {
 }
 
 footer.ftrs-scs nav.nav.social a i {
-    color: #9B252C !important;
+    color: #fff !important;
 }
 
 footer.ftrs-scs nav.nav.social a:hover {
-    background: #fff;
+    background: #585757;
 }
 
 .ft-btm-sc {
@@ -832,7 +832,7 @@ ul.ftr-bt-nv li>a {
 }
 
 .fncy-bxs-ctg:hover .ttlsc-h3 {
-    background: #9B252C;
+    background: #585757;
 }
 
 .fnc-nwpr-aw {
@@ -958,6 +958,7 @@ p.dscrpt {
     margin-top: 2px;
     overflow: hidden;
     transition: 0.3s all ease;
+    color: #9B252C;
 }
 
 .nws-glr-s .cn-ngs:hover h3 {
@@ -1929,7 +1930,7 @@ h4.dl-tt-h::before {
     position: absolute;
     width: 80px;
     height: 1px;
-    background: #9B252C;
+    background: #fff;
     bottom: 0;
 }
 
@@ -2584,7 +2585,7 @@ section#grp-oprt .mpsx-d {
 }
 
 .fnc-awr-th {
-    background: #18355f;
+    background: #9B252C;
     position: relative;
     transition: 0.3s all ease;
     -webkit-transition: 0.3s all ease;
@@ -4292,7 +4293,7 @@ p.author a {
         padding: 11.5px 11px;
     }
     .offcanvas-nav {
-        background: #18355f;
+        background: #73767B;
     }
     .grscs {
         padding: 20px 20px;

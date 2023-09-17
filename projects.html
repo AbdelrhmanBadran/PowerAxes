@@ -11,17 +11,44 @@
     <title>Power Axes Group - Construction Company  </title>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="./assets/css/plugins.css">
+    <link href="./assets/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets//js/flickity.pkgd.min.js">
-    <link rel="stylesheet" href="./assets/css/glblstyls.css">
+    <link rel="stylesheet" href="./assets/css/glblstyls.css?v=020822">
     <link rel="stylesheet" href="./assets/css/BStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
+
+    <style>
+        .cntnt-bx {
+            position: relative;
+        }
+
+        .cntnt-bx.readall-hide::after {
+            background: linear-gradient(to bottom, rgb(255 255 255 / 10%), #fff 75%);
+            content: '';
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            height: 15%;
+        }
+
+        button.readall-button.btn.btn-primary.btn-xs.btn-styl3 {
+            padding: 7px 20px;
+            margin-top: 10px;
+        }
+
+        button.readall-button.btn.btn-primary.btn-xs.btn-styl3:focus {
+            background-color: var(--color-secondary) !important;
+            border-color: var(--color-secondary) !important;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="content-wrapper">
         <!--header-->
         <header class="wrapper bg-soft-primary">
@@ -170,14 +197,16 @@
         </header>
         <!-- /header -->
         <!--header-->
-        <section class="wrapper pg-banner image-wrapper bg-image bg-overlay text-white" data-image-src="https://www.asgcgroup.com/source/uploads/20220719f6ef36043113b.jpg">
+        <section class="wrapper pg-banner image-wrapper bg-image bg-overlay text-white" data-image-src="./source/uploads/20220801b83406c96416b.jpg">
             <div class="container pt-20 pb-10 pt-md-22 pb-md-13">
                 <div class="row d-flex flex-wrap align-items-end">
-                    <div class="col-md-12" data-cues="slideInUp">
-                        <h1 class="bnr-ttl">Social Responsibility</h1>
+                    <div class="col-md-8 ">
+                        <h1 class="bnr-ttl">Projects</h1>
                     </div>
                     <!-- /column -->
+                    <div class="col-md-4  text-md-end">
 
+                    </div>
                     <!-- /column -->
                 </div>
                 <!-- /.row -->
@@ -185,346 +214,263 @@
         </section>
         <!-- /.container -->
         <!--/.hero-slider-wrapper -->
-        <section class="wrapper pt-8 pb-8 pt-md-12 pb-md-6">
+        <section class="wrapper pt-8 pb-8 pt-md-12 pb-md-12">
             <div class="container">
+                <div class="row mb-5 mb-md-6">
+
+                    <div class="col-md-12">
+                        <div class="bg-primary rounded bx-fltr-sc p-md-9 p-5" data-cues="fadeIn">
+                            <h3 class="text-white mb-3 mb-md-6">Filter</h3>
+                            <div class="row d-flex align-items-end">
+                                <div class="col-md-9">
+                                    <div class="row gx-md-10 d-flex align-items-end">
+                                        <div class="col-6 col-md-4">
+                                            <div class="nw-stl-sc mb-md-0 mb-3">
+                                                <select class="sctr-flr js-states form-control" onchange="javascript: FilterbySector('./projects/',this.value)">
+                                                    <option value=""></option>
+                                                    <option value="hospitality">Hospitality</option>
+                                                    <option value="residential">Residential</option>
+                                                    <option value="commercial">Commercial</option>
+                                                    <option value="social-infrastructure">Social Infrastructure</option>
+                                                    <option value="industrial">Industrial</option>
+                                                    <option value="healthcare">Healthcare</option>
+                                                    <option value="transport">Transport</option>
+                                                    <option value="oil-gas">Oil & Gas</option>
+                                                    <option value="infrastructure">Infrastructure</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+                                        <div class="col-6 col-md-4">
+                                            <div class="nw-stl-sc mb-md-0 mb-3">
+                                                <select class="cntr-flr js-states form-control" onchange="javascript: ProjectByCountry(this.value)">
+                                                    <option value=""></option>
+                                                    <option value="Egypt"> Egypt</option>
+                                                    <option value="UAE">UAE</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <div class="col-6 col-md-4">
+                                            <div class="nw-stl-sc mb-md-0 mb-0">
+                                                <select class="sts-flr js-states form-control" onchange="javascript: ProjectByStatus(this.value)">
+                                                    <option value=""></option>
+                                                    <option value="Ongoing"
+                                                        >Ongoing</option>
+                                                    <option value="Completed"
+                                                        >Completed
+                                                    </option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!--col-->
+                                        <div class="col-6 col-md-3 text-md-end d-block d-md-none" data-cues="slideInUp">
+                                            <a class="bt-blnk-d" href="./projects.php">Clear Filter <i class="fa-solid fa-arrow-turn-up"></i></a>
+                                        </div>
+                                        <!--col-->
+
+                                    </div>
+                                </div>
+                                <!--col-->
+                                <div class="col-md-3 text-md-end d-none d-md-block" data-cues="slideInUp">
+                                    <a class="bt-blnk-d" href="./projects.php">Clear Filter <i class="fa-solid fa-arrow-turn-up"></i></a>
+                                </div>
+                                <!--col-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="row mb-5 mb-md-6">
+
+                    <div class="col-md-12">
+                        <div class="cntnt-bx" data-cues="slideInUp">
+                            <div>
+                                <p>ASGC plans, designs, and delivers landmark projects with an uncompromising commitment to its clients.</p>
+
+                                <p>ASGC adds value for its clients through constructing sustainable projects which adopt the latest technologies and innovation to drive efficiencies.</p>
+
+                                <p>ASGC delivers projects across a wide variety of sectors, such as: commercial, residential, leisure, hospitality, healthcare, education, social infrastructure and industrial, and is a contractor of choice for all the major
+                                    private and the government entities.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div id="MoreProjects" class="row gx-md-10 gy-md-10 gy-5" data-cues="slideInUpppp">
+
+                    <div class="post col-md-6">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/20220818e4de89cadb.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Commercial</h5>
+                            <h3>MC2 - Masdar City Campus</h3>
+                            <a href="./projects/commercial/mc2-masdar-city-campus.html" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-6">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/202207206b331c6b6f.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Residential</h5>
+                            <h3>The Grove</h3>
+                            <a href="projects/residential/the-grove" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/202207201cb9a890cf.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Residential</h5>
+                            <h3>Murooj Al Furjan</h3>
+                            <a href="projects/residential/murooj-al-furjan" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/2022072005eed088b4.jpg" alt="Al Gurm Phase 2">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Infrastructure</h5>
+                            <h3>Al Gurm Phase 2</h3>
+                            <a href="projects/infrastructure/al-gurm-phase-2" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/20220720c9b6d9c94f.jpg" alt="Internal Roads Project in Nad Al Sheba 2">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Infrastructure</h5>
+                            <h3>Internal Roads Project in Nad Al Sheba 2</h3>
+                            <a href="projects/infrastructure/internal-roads-project-in-nad-al-sheba-2" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-6">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/202207203db27707a5.jpg" alt="The Palace">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Hospitality</h5>
+                            <h3>The Palace</h3>
+                            <a href="projects/hospitality/the-palace" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-6">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/20220720fcd329e926.jpg" alt="Creek Edge">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Residential</h5>
+                            <h3>Creek Edge</h3>
+                            <a href="projects/residential/creek-edge" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/20220720054082232a.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Social Infrastructure</h5>
+                            <h3>Coca-Cola Arena</h3>
+                            <a href="projects/social-infrastructure/coca-cola-arena" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/2022072035808c5948.jpg" alt="Marsa Al Arab Hotel | Hotel Projects Construction Companies in Dubai | General Contracting Company UAE">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Hospitality</h5>
+                            <h3>Marsa Al Arab</h3>
+                            <a href="projects/hospitality/marsa-al-arab" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+                    <div class="post col-md-4">
+                        <div class="fnc-bx-prit">
+                            <div class="rounded thmb-im">
+                                <div class="prllx" data-parallax="true" data-parallax-options='{ "overflowHidden": hidden, "easing": "linear" }' data-parallax-from='{"translateX":0, "translateY":0, "scaleX":1.0, "scaleY":1.0}' data-parallax-to='{"translateX":0, "translateY":0, "scaleX":1.4, "scaleY":1.4}'>
+                                    <figure class="imgLiquid">
+                                        <img loading="lazy" src="./source/uploads/20220720821df111f2.jpg" alt="H Residence">
+                                    </figure>
+                                </div>
+                            </div>
+                            <h5>Residential</h5>
+                            <h3>H Residence</h3>
+                            <a href="projects/residential/h-residence" class="aslnk-ws">Project</a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--/.row -->
                 <div class="row">
+                    <div class="col-md-12 mt-md-8 mt-6">
+                        <!-- <nav class="d-flex" aria-label="pagination">
+                                                    </nav> -->
 
-                    <div class="col-md-12 mb-md-8 mb-10" data-cues="slideInUp">
-                        <h2 class="sb-ttls">Workplace, community, environment, and <br> youth & thought leadership</h2>
-                        <hr class="bt-lne wd-125 bg-secondary m-0 mb-5">
-                        <p>ASGC is committed to being a responsible partner and our corporate responsibility program focuses on the four pillars of Workplace, Community, Environment, and Youth &amp; Thought Leadership.</p>
+                        <input type="hidden" id="row" value="0">
+                        <input type="hidden" id="all" value="110">
+                        <input type="hidden" id="sector" value="">
+                        <input type="hidden" id="country" value="">
+                        <input type="hidden" id="status" value="">
 
-                        <p>ASGC also believes in playing its part in encouraging the wellbeing and development of its employees, dedicating to hosting events and initiating programmes throughout the year.</p>
+                        <a href="javascript:void(0);" class="btn btn-secondary btn-sm rounded-pill btn-styl2 load-more">Load More </a>
 
-                        <p>Our positive actions within these sectors will continue to leave a positive impact for the next generations.</p>
+
                     </div>
-                    <div class="col-md-12">
-                        <hr>
-                    </div>
-                    <!--/column -->
                 </div>
                 <!--/.row -->
             </div>
             <!-- /.container -->
         </section>
         <!-- /section -->
-        <section class="wrapper pt-8 pb-0 pt-md-6 pb-md-6">
-            <div class="container">
-                <div class="row mb-md-8 mb-8" data-cues="fadeIn">
-                    <div class="col-md-7">
-                        <div class="owl-carousel nmbr-dts dots-over csr-crsl">
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/inner/csr/csr-s4.jpg?format=webp" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>Dubai Fitness Challenge</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/1550062904.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>ASGC Cricket Cup</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/1550062989.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>Iftar Event</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-
-                        </div>
-                        <!--crsl-->
-                    </div>
-                    <div class="col-md-5">
-                        <div class="ps-md-10">
-                            <h2 class="sb-ttls">Workplace</h2>
-                            <hr class="bt-lne bg-secondary mt-0 mt-md-3 mb-5 mb-md-7">
-                            <ul class="prgrs-ulsc" data-cues="fadeIn">
-                                <li>Employee Development and Career Progression- Impactful Communication and Leadership Development
-                                </li>
-                                <li>Healthcare & Wellness</li>
-                                <li>Employee Social Activities</li>
-                                <li>Stress Management Sessions</li>
-                                <li>Meditations sessions</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!--/column -->
-                </div>
-                <!--/.row -->
-                <div class="row mb-md-8 mb-8">
-                    <div class="col-md-7 order-md-2" data-cues="fadeIn">
-                        <div class="owl-carousel nmbr-dts dots-over csr-crsl">
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/inner/csr/csr-s3.jpg?format=webp" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--h5>24 Nov 2018</h5>-->
-                                        <h3>Etihad Museum - The Story of the Beginning</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="source/uploads/2022072005ee151a6c2.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--h5>24 Nov 2018</h5>-->
-                                        <h3>Mohammed Bin Rashid Library</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/1560771426.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--h5>24 Nov 2018</h5>-->
-                                        <h3>Ramadan Care Packages</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-
-
-                        </div>
-                        <!--crsl-->
-                    </div>
-                    <div class="col-md-5">
-                        <div class="pe-md-10">
-                            <h2 class="sb-ttls">Community</h2>
-                            <hr class="bt-lne bg-secondary mt-0 mt-md-3 mb-5 mb-md-7">
-                            <ul class="prgrs-ulsc" data-cues="fadeIn">
-                                <li>Responsible Builder of Projects with High Importance for the Community</li>
-                                <li>Philanthropy Relationships</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!--/column -->
-                </div>
-                <!--/.row -->
-                <div class="row mb-md-8 mb-8" data-cues="fadeIn">
-                    <div class="col-md-7">
-                        <div class="owl-carousel nmbr-dts dots-over csr-crsl">
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="source/uploads/20220801c1fc983eec35b.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>Clean Up Campaign</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/sustainability.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>LEED Platinum Certified</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="source/uploads/gallery_974.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!-- <h5>24 Nov 2018</h5>-->
-                                        <h3>Earth Hour</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-
-                        </div>
-                        <!--crsl-->
-                    </div>
-                    <div class="col-md-5">
-                        <div class="ps-md-10">
-                            <h2 class="sb-ttls">Environment</h2>
-                            <hr class="bt-lne bg-secondary mt-0 mt-md-3 mb-5 mb-md-7">
-                            <ul class="prgrs-ulsc" data-cues="fadeIn">
-                                <li>Sustainable Building & Technology</li>
-                                <li>Re-Use & Recycle</li>
-                                <li>Environmental Campaigns</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!--/column -->
-                </div>
-                <!--/.row -->
-                <div class="row mb-md-8 mb-8" data-cues="fadeIn">
-                    <div class="col-md-7 order-md-2">
-                        <div class="owl-carousel nmbr-dts dots-over csr-crsl">
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/inner/csr/csr-s1.jpg?format=webp" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--   <h5>24 Nov 2018</h5>-->
-                                        <h3>ASGC Students Excellence Award, Heriot Watt University, Dubai</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/1560767481.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--   <h5>24 Nov 2018</h5>-->
-                                        <h3>AUD’s JEEL Team Support & Sponsorship at the Solar Decathlon Middle East
-                                        </h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-                            <div class="item">
-                                <div class="fnc-bx-one">
-                                    <figure class="imgLiquid">
-                                        <img loading="lazy" src="assets/img/1560767923.jpg" width="1349" height="685" alt="" />
-                                    </figure>
-                                    <div class="dsc-sc">
-                                        <!--   <h5>24 Nov 2018</h5>-->
-                                        <h3>Excellence Awards - ASGC Kids</h3>
-                                    </div>
-                                    <!-- <a class="aslnk-ws" href="#"></a> -->
-                                </div>
-                            </div>
-                            <!--item-->
-
-
-                        </div>
-                        <!--crsl-->
-                    </div>
-                    <div class="col-md-5">
-                        <div class="pe-md-10">
-                            <h2 class="sb-ttls">Youth & thought leadership
-                            </h2>
-                            <hr class="bt-lne bg-secondary mt-0 mt-md-3 mb-5 mb-md-7">
-                            <ul class="prgrs-ulsc" data-cues="fadeIn">
-                                <li>Forums, Conferences and Support of Educational Organizations</li>
-                                <li>Internship Programs</li>
-                                <li>Excellence Awards: ASGC Kids</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!--/column -->
-                </div>
-                <!--/.row -->
-
-            </div>
-            <!-- /.container -->
-        </section>
-        <!-- /section -->
-        <section class="wrapper pt-0 pb-8 pt-md-5 pb-md-12">
-            <div class="container">
-                <div class="row gx-md-8" data-cues="slideInUp">
-                    <div class="col-md-12 mb-md-6 mb-5">
-                        <h2 class="sb-ttls">Events Calendar</h2>
-                    </div>
-                </div>
-                <div id="MoreEvents" class="row gx-md-8" data-cues="slideInUppp">
-                    <div class="post col-md-4">
-                        <div class="fnc-bx-two mb-md-5 mb-4">
-                            <figure class="imgLiquid">
-                                <img loading="lazy" src="https://www.asgcgroup.com/source/uploads/202208011101f42f9d.jpg" width="1349" height="685" alt="" />
-                            </figure>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            <div class="dsc-sc">
-                                <h5>05-06-2022</h5>
-                                <h3>World Environment Day</h3>
-                            </div>
-                            <a class="aslnk-ws" href="gallery/world-environment-day"></a>
-                        </div>
-                    </div>
-                    <div class="post col-md-4">
-                        <div class="fnc-bx-two mb-md-5 mb-4">
-                            <figure class="imgLiquid">
-                                <img loading="lazy" src="https://www.asgcgroup.com/source/uploads/20220810b41fd0ed8d.png" width="1349" height="685" alt="" />
-                            </figure>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            <div class="dsc-sc">
-                                <h5>29-12-2021</h5>
-                                <h3>2021 Dubai chamber certificate</h3>
-                            </div>
-                            <a class="aslnk-ws" href="gallery/2021-dubai-chamber-certificate"></a>
-                        </div>
-                    </div>
-                    <div class="post col-md-4">
-                        <div class="fnc-bx-two mb-md-5 mb-4">
-                            <figure class="imgLiquid">
-                                <img loading="lazy" src="https://www.asgcgroup.com/source/uploads/2022081052f780baa8.jpg" width="1349" height="685" alt="" />
-                            </figure>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            <div class="dsc-sc">
-                                <h5>28-12-2021</h5>
-                                <h3>Cricket tournament</h3>
-                            </div>
-                            <a class="aslnk-ws" href="gallery/cricket-tournament"></a>
-                        </div>
-                    </div>
-
-                    <!-- <h2 class="load-more">Load More</h2> -->
-                    <input type="hidden" id="row" value="0">
-                    <input type="hidden" id="all" value="25">
-
-                    <div class="col-md-12">
-                        <a href="javascript:void(0);" class="btn btn-secondary btn-sm rounded-pill btn-styl2 load-more">Load More <i
-                                class="uil uil-angle-down"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </div>
     <!-- /.content-wrapper -->
     <!--footer-->
@@ -555,7 +501,7 @@
                 <!-- /column -->
                 <div class="col-md-3 col-lg-3 text-md-end">
                     <h4>Download Profile</h4>
-                    <a class="dwn-bl bg-secondary" target="_blank" href="https://www.asgcgroup.com/source/uploads/20220928a66db62646.pdf"><i class="fa-solid fa-arrow-down"></i></a>
+                    <a class="dwn-bl bg-secondary" target="_blank" href="./source/uploads/20220928a66db62646.pdf"><i class="fa-solid fa-arrow-down"></i></a>
                 </div>
                 <!-- /column -->
             </div>
@@ -620,11 +566,9 @@
         </div>
     </footer>
     <!--footer-->
-
     <a href="#sec2" class="dwns-c scroll">
         <i class="fa fa-arrow-down"></i>
     </a>
-
     <div class="progress-wrap ">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
@@ -634,13 +578,13 @@
 
 
 
-
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script src="./assets/js/plugins.js"></script>
-    <script src="assets/js/flickity.pkgd.min.js"></script>
+    <script src="./assets/js/select2.min.js"></script>
+    <script src="./assets/js/glscs-th.js"></script>
     <script src="./assets/js/imgLiquid-min.js"></script>
-    <script src="./assets/js/glscs-th.js?v=13092022"></script>
+
     <script>
         $(window).scroll(function() {
             if ($(this).scrollTop() > 50) {
@@ -650,22 +594,27 @@
             }
         });
     </script>
-
     <script>
         $(document).ready(function() {
             // Load more data
             $('.load-more').click(function() {
                 var row = Number($('#row').val());
+                var sector = $('#sector').val();
                 var allcount = Number($('#all').val());
-                var rowperpage = 3;
+                var rowperpage = 10;
+                var country = $('#country').val();
+                var status = $('#status').val();
                 row = row + rowperpage;
                 if (row <= allcount) {
                     $("#row").val(row);
                     $.ajax({
-                        url: 'ajax/get_events.php',
+                        url: './projects.php',
                         type: 'post',
                         data: {
-                            row: row
+                            row: row,
+                            sector: sector,
+                            country: country,
+                            status: status
                         },
                         beforeSend: function() {
                             $(".load-more").text('Loading... ');
@@ -683,9 +632,17 @@
                                     /*$('.load-more').text("Hide");
                                     $('.load-more').css("background","darkorchid");*/
                                 } else {
-                                    $(".load-more").text('Load more');
+                                    $(".load-more").text('Load more ');
                                 }
                                 $(".imgLiquid").imgLiquid();
+                                const lightbox = GLightbox({
+                                    selector: '*[data-glightbox]',
+                                    touchNavigation: true,
+                                    loop: true,
+                                    autoplayVideos: true
+                                });
+
+                                //lightbox.open();
                             }, 2000);
                         }
                     });
@@ -698,10 +655,114 @@
                         // Reset the value of row
                         $("#row").val(0);
                         // Change the text and background
-                        $('.load-more').text('Load more');
+                        $('.load-more').text('Load more ');
                         //$('.load-more').css("background","#15a9ce");
                     }, 2000);
                 }
+            });
+        });
+
+        function ProjectByCountry(str) {
+            $('#country').val(str);
+            var sector = $('#sector').val();
+            var country = $('#country').val();
+            var status = $('#status').val();
+            var postData = {
+                country: country,
+                sector: sector,
+                status: status
+            };
+
+            $.ajax({
+                url: "./projects.php",
+                type: "POST",
+                data: postData,
+                success: function(data, textStatus, jqXHR) {
+                    $('#MoreProjects').html(data);
+                    $(".imgLiquid").imgLiquid();
+                    const lightbox = GLightbox({
+                        selector: '*[data-glightbox]',
+                        touchNavigation: true,
+                        loop: true,
+                        autoplayVideos: true
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+
+        function ProjectByStatus(str) {
+            $('#status').val(str);
+            var sector = $('#sector').val();
+            var country = $('#country').val();
+            var status = $('#status').val();
+            var postData = {
+                country: country,
+                sector: sector,
+                status: status
+            };
+
+            $.ajax({
+                url: "./projects.php",
+                type: "POST",
+                data: postData,
+                success: function(data, textStatus, jqXHR) {
+                    $('#MoreProjects').html(data);
+                    $(".imgLiquid").imgLiquid();
+                    const lightbox = GLightbox({
+                        selector: '*[data-glightbox]',
+                        touchNavigation: true,
+                        loop: true,
+                        autoplayVideos: true
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        $(".sts-flr").select2({
+            placeholder: "Status",
+            allowClear: true
+        });
+        $(".cntr-flr").select2({
+            placeholder: "Country",
+            allowClear: true
+        });
+        $(".sctr-flr").select2({
+            placeholder: "Sector",
+            allowClear: true
+        });
+
+
+        function FilterbyType(url, str) {
+            window.location = url + "&status=" + str;
+        }
+
+        function FilterbyCountry(url, str) {
+            window.location = url + "&country=" + str;
+        }
+
+        function FilterbySector(url, str) {
+            window.location = url + "" + str;
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".cntnt-bx").readall({
+                // Default values
+                showheight: 180, // height to show
+                showrows: null, // rows to show (overrides showheight)
+                animationspeed: 280, // speed of transition
+                btnTextShowmore: "Read more", // text shown on button to show more
+                btnTextShowless: "Read less", // text shown on button to show less
+                btnClassShowmore: "readall-button btn btn-primary btn-xs  btn-styl3", // class(es) on button to show more
+                btnClassShowless: "readall-button btn btn-primary btn-xs  btn-styl3", // class(es) on button to show less
             });
         });
     </script>
