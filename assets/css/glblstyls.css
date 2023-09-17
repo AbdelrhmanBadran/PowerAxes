@@ -3513,7 +3513,7 @@ figure.hsesc {
 }
 
 .tech-nv .its-sc svg {
-    fill: #18355f;
+    fill: #737373;
     height: 110px;
     margin: 0 auto;
     transition: 0.3s all ease-in-out;
@@ -3561,23 +3561,23 @@ figure.hsesc {
     right: -5px;
 }
 
-.slider.tech-nv button.slick-next.slick-arrow::before {
-    content: "\e930";
+.slider.tech-nv button.slick-next.slick-arrow::before{
+    content: "\f054";
 }
-
 .tech-nv .slick-arrow::before {
-    content: "\e92e";
     width: 25px;
     height: 25px;
     position: absolute;
     left: 0;
     right: 0;
     color: #b8b8b8 !important;
-    font-family: "Unicons" !important;
     display: inline-block !important;
     text-indent: initial !important;
     font-size: 28px;
     line-height: 25px;
+    content: "\f053";
+    font-size: 20px;
+    font-family: FontAwesome !important;
 }
 
 .slider.tech-nv .slick-list {
@@ -3586,7 +3586,7 @@ figure.hsesc {
 
 .tech-nv .slick-slide.slick-current.slick-active .its-sc svg,
 .tech-nv .slick-slide:hover .its-sc svg {
-    fill: #5ba646;
+    fill: #9B252C;
 }
 
 .bnr-scs .plyr.plyr--full-ui.plyr--video.plyr--youtube.plyr--fullscreen-enabled.plyr--paused.plyr--stopped.plyr__poster-enabled::before {
@@ -3605,8 +3605,7 @@ figure.hsesc {
 
 .tech-nv .its-sc i {
     position: absolute;
-    font-family: "Unicons" !important;
-    font-size: 28px;
+    font-size: 15px;
     bottom: 0;
     background: #999;
     width: 30px;
@@ -4137,7 +4136,7 @@ p.author a {
     }
     .arc-dt-ob p {
         font-weight: 500;
-        color: #18355f;
+        color: #9B252C;
     }
     .arc-dt-ob h2.sb-ttls::before {
         width: 65%;
